@@ -1,0 +1,29 @@
+$blueColor: #204462;
+$whiteColor: #fff;
+
+$blueGradient: radial-gradient(circle, #2e6eb2 0%, #2f6fb3 50%, #29619d 100%);
+$whiteGradient: radial-gradient(circle, #eeeeee 0%, #dfdfdf 50%, #dfdfdf 100%);
+
+%titleItemElement {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+%descItemElement {
+  font-size: 16px;
+  color: #204462;
+}
+
+%animationHoverItem {
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+@media (max-width: 600px) {
+  %titleItemElement {
+    font-size: 20px;
+  }
+}

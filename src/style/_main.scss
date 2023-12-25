@@ -1,0 +1,363 @@
+.title-pk {
+  margin: 30px 0;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.nav-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.nav-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background: $blueGradient;
+  border-radius: 10px;
+  height: 280px;
+
+  h4,
+  p {
+    color: $whiteColor;
+  }
+
+  .nav-item-info {
+    &__text {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &_big {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-row: 1/3;
+    background: url("./../img/bvo-bac.jpg") center no-repeat;
+    background-size: cover;
+    height: auto;
+  }
+
+  &_long {
+    grid-column: 1/3;
+
+    .nav-item-content {
+      padding: 50px;
+    }
+  }
+
+  &_white {
+    background: $whiteGradient;
+    grid-template-columns: 1fr 2fr;
+
+    h4,
+    p {
+      color: $blueColor;
+    }
+
+    .nav-item-info {
+      &__text {
+        color: rgba(32, 68, 97, 0.6);
+      }
+    }
+
+    .nav-item-content {
+      order: 2;
+    }
+
+    .nav-item-img {
+      order: 1;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+  }
+}
+
+.nav-item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+
+  &_big {
+    background: $blueGradient;
+    border-radius: 10px;
+    grid-column: 2/4;
+    grid-row: 3/4;
+  }
+
+  &__title {
+    @extend %titleItemElement;
+  }
+
+  &__desc {
+    font-size: 16px;
+    color: $blueColor;
+  }
+
+  &__more {
+    margin-top: 10px;
+    text-align: right;
+    color: $blueColor;
+    font-weight: 600;
+  }
+}
+
+.nav-item-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  img {
+    width: 22px;
+    height: 16px;
+  }
+}
+
+.nav-item-img {
+  position: relative;
+  overflow: hidden;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.nav-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.services-item {
+  display: flex;
+  background: $whiteGradient;
+  border-radius: 10px;
+  padding: 20px;
+  width: 425px;
+  height: 150px;
+  @extend %animationHoverItem;
+}
+
+.services-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 10px;
+  width: 70%;
+
+  &__title {
+    @extend %titleItemElement;
+  }
+
+  &__desc {
+    @extend %descItemElement;
+  }
+}
+
+.services-item-img {
+  position: relative;
+  overflow: hidden;
+  width: 30%;
+}
+
+.services-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mpsu-container {
+  @extend .services-container;
+}
+
+.mpsu-item {
+  @extend .services-item;
+  background: $blueGradient;
+}
+
+.mpsu-item-content {
+  @extend .services-item-content;
+  justify-content: center;
+
+  &__title {
+    font-size: 30px;
+    text-align: center;
+    color: $whiteColor;
+  }
+}
+
+.mpsu-item-img {
+  @extend .services-item-img;
+}
+
+.mpsu-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contacts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacts-general {
+  background: $whiteGradient;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.contacts-title {
+  @extend .services-item-content__title;
+  text-align: center;
+}
+
+.contacts-general .contacts-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.contacts-content {
+  display: flex;
+  justify-content: space-around;
+
+  &__address,
+  &__phone,
+  &__email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: $blueColor;
+  }
+
+  p {
+    color: $blueColor;
+  }
+}
+
+.contacts-other {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  gap: 10px;
+
+  .contacts-title {
+    font-size: 18px;
+    color: $whiteColor;
+  }
+
+  .contacts-content__title,
+  p {
+    color: $whiteColor;
+  }
+}
+
+.contacts-contract,
+.contacts-piv {
+  background: $blueGradient;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.contacts-map,
+.contacts-social {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts-social {
+  background: $whiteGradient;
+  border-radius: 10px;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .nav-container {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-item {
+    height: 225px;
+    &_big {
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 1fr;
+      background-position: top;
+    }
+
+    &_long {
+      grid-column: 1;
+
+      .nav-item-content {
+        padding: 20px;
+      }
+    }
+  }
+
+  .nav-item-content {
+    &_big {
+      grid-row: 1;
+      grid-column: 2/3;
+    }
+  }
+
+  .contacts-general .contacts-content {
+    grid-template-columns: repeat(2, 1fr);
+
+    & .contacts-content__address {
+      grid-column: 1/3;
+      margin-bottom: 10px;
+    }
+  }
+
+  .contacts-other {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-item {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-item-content {
+    padding: 16px;
+    &__desc {
+      display: none;
+    }
+  }
+
+  .services-item-content {
+    &__title {
+      font-size: 16px;
+    }
+
+    &__desc {
+      font-size: 14px;
+    }
+  }
+
+  .mpsu-item-content {
+    &__title {
+      font-size: 24px;
+    }
+  }
+}
